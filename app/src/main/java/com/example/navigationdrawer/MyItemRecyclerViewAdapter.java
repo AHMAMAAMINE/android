@@ -103,13 +103,19 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
                 machinesFilter.addAll(mValues);
             } else {
                 final String filterPattern = charSequence.toString().toLowerCase().trim();
+
                 for (PlaceholderContent.Machine p : mValues) {
                     if (p.getReference().toLowerCase().startsWith(filterPattern)) {
-                        machinesFilter.add(p);
-                        mAdapter.notifyItemInserted(machinesFilter.size());
+                        Log.d("d","dad");
+                        Log.d("dada",p.toString());
 
+                        machinesFilter.clear();
+                        machinesFilter.add(p);
+                        Log.d("dadada",machinesFilter.toString());
                     }
                 }
+//                mAdapter.notifyItemInserted(machinesFilter.size());
+
 //                mAdapter..clear();
 //                mAdapter.notifyDataSetChanged();
 //                mAdapter.getDataAdapter.addAll((ArrayList<MainActivity.Radios>) results.values);
